@@ -2,6 +2,7 @@
 
 #include <QJsonDocument>
 #include <QTextStream>
+#include <QDebug>
 
 NetworkHelper::NetworkHelper()
 {
@@ -31,12 +32,12 @@ QJsonObject NetworkHelper::string_to_hash(QString str)
 		}
 		else
 		{
-			qDebug() << "Document is not an object" << Qt::endl;
+			qDebug() << "Document is not an object" << '\n';
 		}
 	}
 	else
 	{
-		qDebug() << "Invalid JSON...\n" << str << Qt::endl;
+		qDebug() << "Invalid JSON...\n" << str << '\n';
 	}
 
 	return obj;

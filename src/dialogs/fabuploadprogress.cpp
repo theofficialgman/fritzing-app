@@ -140,7 +140,7 @@ void FabUploadProgress::uploadProgress(qint64 bytesSent, qint64 bytesTotal) {
 void FabUploadProgress::onError(QNetworkReply::NetworkError code)
 {
 	QNetworkReply *reply = qobject_cast<QNetworkReply*>(sender());
-	qDebug() << "onError" << code << Qt::endl << Qt::flush;
+	qDebug() << "onError" << code << '\n' << '\n';
 	FMessageBox::critical(this, tr("Fritzing"), tr("Could not connect to Fritzing fab.") + "Error: " + reply->errorString());
 	emit closeUploadError();
 }
@@ -165,7 +165,7 @@ void FabUploadProgress::apiError(QString message)
 
 void FabUploadProgress::uploadDone() {
 	QNetworkReply *reply = qobject_cast<QNetworkReply*>(sender());
-	qDebug() << "----------Finished--------------" << Qt::endl;
+	qDebug() << "----------Finished--------------" << '\n';
 	if (reply->error() == QNetworkReply::NoError) {
 		auto d = reply->readAll();
 //		qDebug() << d << Qt::endl << Qt::flush;
